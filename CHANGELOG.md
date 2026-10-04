@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.0+26.3
+
+- The same mod for Minecraft 26.3 (Fabric API 0.161.0+26.3, Mod Menu 21). No changes in behaviour; the 26.2 version stays available.
+
 ## 0.1.0
 
 First release, for Minecraft 26.2.

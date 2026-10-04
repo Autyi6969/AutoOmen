@@ -1,0 +1,13 @@
+{
+	"required": true,
+	"minVersion": "0.8",
+	"package": "io.github.autyism.autoomen.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"BossHealthOverlayAccessor",
+		"MinecraftMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

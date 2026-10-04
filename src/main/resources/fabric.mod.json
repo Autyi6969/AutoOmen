@@ -1,0 +1,33 @@
+{
+	"schemaVersion": 1,
+	"id": "autoomen",
+	"version": "${version}",
+	"name": "Auto Omen",
+	"description": "Drinks an Ominous Bottle from your inventory when a raid ends, so an AFK raid farm keeps running.",
+	"authors": [
+		"Autyism"
+	],
+	"license": "GPL-3.0-only",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"io.github.autyism.autoomen.AutoOmen"
+		],
+		"modmenu": [
+			"io.github.autyism.autoomen.compat.ModMenuEntry"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"modmenu": "*"
+	},
+	"mixins": [
+		"autoomen.mixins.json"
+	],
+	"icon": "assets/autoomen/icon.png"
+}

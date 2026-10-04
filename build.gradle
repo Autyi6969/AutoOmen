@@ -1,0 +1,76 @@
+plugins {
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+	archivesName = project.archives_base_name
+}
+
+repositories {
+	maven { url "https://maven.terraformersmc.com/releases/" }
+}
+
+// LWJGL (also its native jars) is published unchanged on Maven Central. Downloads from
+// libraries.minecraft.net keep getting their TLS handshake cut on this network, so look there first.
+def lwjglCentral = repositories.maven {
+	name = "MavenCentralLwjgl"
+	url = "https://repo1.maven.org/maven2/"
+	content { includeGroup "org.lwjgl" }
+}
+repositories.remove(lwjglCentral)
+repositories.addFirst(lwjglCentral)
+
+dependencies {
+	// To change the versions see the gradle.properties file
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	// Mod Menu: compile against its API only; present in the dev client for testing the config button.
+	compileOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
+	localRuntime "com.terraformersmc:modmenu:${project.modmenu_version}"
+}
+
+processResources {
+	inputs.property "version", project.version
+
+	filesMatching("fabric.mod.json") {
+		expand "version": inputs.properties.version
+	}
+}
+
+java {
+	// Compile and run (runClient) with Java 25 even though the Gradle daemon may run on another JDK.
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(25)
+	}
+	withSourcesJar()
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 25
+	it.options.encoding = "UTF-8"
+}
+
+jar {
+	inputs.property "archivesName", project.base.archivesName
+
+	from("LICENSE") {
+		rename { "${it}_${inputs.properties.archivesName}"}
+	}
+}
+
+loom {
+	runs {
+		// Dev client with the automated in-game self-test enabled (task runSelftest, started by tools/selftest.ps1).
+		selftest {
+			client()
+			name = "Self Test"
+			vmArg "-Dao.selftest=true"
+			runDir = "run"
+		}
+	}
+}

@@ -1,8 +1,8 @@
-<p align="center"><img src="https://raw.githubusercontent.com/Autyism/AutoOmen/master/src/main/resources/assets/autoomen/icon.png" width="128" alt="icon"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/Autyi6969/AutoOmen/master/src/main/resources/assets/autoomen/icon.png" width="128" alt="icon"></p>
 <h1 align="center">Auto Omen</h1>
 <p align="center">袭击塔挂机神器：在刚好的时机替你喝下一瓶不祥之瓶，袭击一场接一场不停。</p>
 
-[English](https://github.com/Autyism/AutoOmen/blob/master/README.md) | **简体中文**
+[English](https://github.com/Autyi6969/AutoOmen/blob/master/README.md) | **简体中文**
 
 ![Minecraft 26.2](https://img.shields.io/badge/Minecraft-26.2-62B47A) ![Fabric](https://img.shields.io/badge/Loader-Fabric-DBD0B4) ![License: GPL-3.0-only](https://img.shields.io/badge/License-GPL--3.0--only-blue)
 
@@ -25,7 +25,7 @@ Auto Omen 是 Minecraft 26.2 的纯客户端 Fabric 小模组。你在袭击塔�
 
 ## 到底什么时候喝才不浪费？
 
-袭击之兆到期时，如果旧袭击还在打（或者还在胜利庆祝），这瓶会被并进旧袭击，不会开新的。旧袭击在胜利 30 秒后才被移除，而袭击之兆正好持续 30 秒，所以只要在"胜利"字样出现之后再喝，就一定会开一场新袭击。完整说明（对照 26.2 源码）见 [docs/MECHANICS.md](https://github.com/Autyism/AutoOmen/blob/master/docs/MECHANICS.md)。
+袭击之兆到期时，如果旧袭击还在打（或者还在胜利庆祝），这瓶会被并进旧袭击，不会开新的。旧袭击在胜利 30 秒后才被移除，而袭击之兆正好持续 30 秒，所以只要在"胜利"字样出现之后再喝，就一定会开一场新袭击。完整说明（对照 26.2 源码）见 [docs/MECHANICS.md](https://github.com/Autyi6969/AutoOmen/blob/master/docs/MECHANICS.md)。
 
 ## 需要
 
